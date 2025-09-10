@@ -1,10 +1,17 @@
-import Image from "next/image";
 import React from "react";
+import Button from "./components/button";
 
 export default function Home() {
+
+    var somthenig="";
+
     return <>
         <div className="flex items-center justify-center h-screen">
-            Halo
+            <Button variant="">
+                <span>
+                    <p>Count</p>
+                </span>
+            </Button>
         </div>
     </>;
 }
