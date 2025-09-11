@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "./components/button";
-
+import PlayButton from "./components/playButton";
 export default function Home() {
 
     var somthenig="";
@@ -12,6 +12,8 @@ export default function Home() {
                     <p>Count</p>
                 </span>
             </Button>
+            <PlayButton />
+
         </div>
     </>;
 }
