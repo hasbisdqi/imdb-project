@@ -1,12 +1,17 @@
 "use client"
-import React, { ReactNode, useState } from 'react'
-
+import React, { ReactNode, useState } from 'react';
+let showCircle: string;
+let showTriangle: string;
 export default function PlayButton() {
+    const [isHovered, setIsHovered] = useState<boolean>(false);
+    const [showCircle, showTriangle] = isHovered
+        ? ["stroke-red-500 stroke-2", "fill-red-500"]
+        : ["stroke-blue-500 stroke-2", "fill-blue-500"];
     return (
-        <button >
+        <button onMouseEnter={() => { setIsHovered(true); }} onMouseLeave={() => { setIsHovered(false); }} className="" style={{border: '2px solid black'}}>
             <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="16" cy="16" r="15.75" className="bg-none stroke-1 stroke-black"/>
-                <path d="M13.25 20.7627L13.25 11.2373L21.5 16L13.25 20.7627Z" className="fill-black"/>
+                <circle cx="16" cy="16" r="15.75" className={showCircle} />
+                <path d="M13.25 20.7627L13.25 11.2373L21.5 16L13.25 20.7627Z" className={showTriangle} />
             </svg>
         </button>
     );
