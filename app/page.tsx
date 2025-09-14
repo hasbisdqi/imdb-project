@@ -1,11 +1,22 @@
 import React from "react";
 import Button from "./components/button";
 import PlayButton from "./components/playButton";
-export default function Home() {
+import MovieCard from "./components/movieCard";
 
+export default function Home() {
     var somthenig="";
 
-    return <>
+    const movies = [
+    {
+      id: 1,
+      title: "The Fantastic Four",
+      rating: 7.2,
+      posterUrl:
+        "https://i.pinimg.com/736x/87/6e/c4/876ec46d8e95efc1e591c75b451e2ef5.jpg",
+    }
+  ];
+
+    return ( <>
         <div className="flex items-center justify-center h-screen">
             <Button variant="">
                 <span>
@@ -15,5 +26,18 @@ export default function Home() {
             <PlayButton />
 
         </div>
-    </>;
+
+    <div className="flex gap-4 p-6">
+        {movies.map((movie) => (
+          <MovieCard
+            key={movie.id}
+            title={movie.title}
+            rating={movie.rating}
+            posterUrl={movie.posterUrl}
+          />
+        ))}
+      </div>
+    </>
+   );
+
 }
