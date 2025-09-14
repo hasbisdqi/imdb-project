@@ -11,7 +11,7 @@ export default function MovieCard({ title, posterUrl, rating }: MovieCardProps) 
   const [isWatchlist, setIsWatchlist] = useState(false);
 
   return <>
-    <div className="bg-gray-900 rounded-2xl overflow-hidden w-56">
+    <div className="bg-gray-900 rounded-2xl overflow-hidden w-56" style={{border: "2px solid red"}}>
       <img src={posterUrl} alt={title} className="w-full h-80" />
 
       <div className="p-4">
